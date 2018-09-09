@@ -1,0 +1,17 @@
+<div class="container">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th class="text-center">Edit</th>
+      </tr>
+    </thead>
+    <tr class="col-sm-4 mb-3" *ngFor="let member of members">
+      <td>{{member.name}}</td>
+      <td class="text-center">
+        <a href="#" [routerLink]="['edit', member._id]">edit</a>
+      </td>
+    </tr>
+  </table>
+
+</div>

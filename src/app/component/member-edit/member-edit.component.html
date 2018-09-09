@@ -1,0 +1,42 @@
+<div class="container" id="member-edit">
+  <form class="form" [formGroup]="memberForm" *ngIf="memberForm">
+
+    <div class="row">
+      <div class="col-2"></div>
+      <div class="col-10">
+        <div class="card" style="width: 25rem; margin-bottom: 15px;">
+          <img class="card-img-top" [src]="member.imgUrl">
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="name" class="col-2 col-form-label text-right">Name</label>
+      <div class="col-10">
+        <input class="form-control" type="text" value="Artisanal kale" id="name" formControlName="name">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="imgUrl" class="col-2 col-form-label text-right">Image Url</label>
+      <div class="col-10">
+        <input class="form-control" type="search" value="How do I shoot web" id="imgUrl" formControlName="imgUrl">
+        <span *ngIf="memberForm.get('imgUrl').getError('url')" class="required">url</span>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="instagramId" class="col-2 col-form-label text-right">Instagram</label>
+      <div class="col-10">
+        <input class="form-control" type="email" value="bootstrap@example.com" id="instagramId" formControlName="instagramId">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-2"></div>
+      <div class="col-10">
+        <button type="submit" class="btn btn-primary" (click)="save()">Save</button>
+        <button type="submit" class="btn btn-light ml-1" (click)="reset()">Reset</button>
+      </div>
+    </div>
+
+  </form>
+</div>

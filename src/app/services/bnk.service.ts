@@ -20,4 +20,12 @@ export class BnkService {
     return this.http.get<Feed>(`${environment.instagram_api_url}${id}`);
   }
 
+  getMember(id: string): Observable<Member> {
+    return this.http.get<Member>(`${environment.api_url}/bnk/members/${id}`);
+  }
+
+  save(member: Member): Observable<any> {
+    return this.http.patch(`${environment.api_url}/bnk/members/${member._id}`, member);
+  }
+
 }
